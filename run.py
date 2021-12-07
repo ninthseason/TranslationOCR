@@ -11,10 +11,12 @@ APP_KEY = ''
 core.Config.setAppInfo(core.Config, APP_ID, APP_KEY)
 requestSender = core.RequestSender()
 
-shot = ScreenShot.Shot()
-shot.setScale(1.5)
-shot.start()
-img = shot.getImage()
-if img is not None:
-    img.save('__temp.png')
-    print(requestSender.getResult('__temp.png'))
+while True:
+    shot = ScreenShot.Shot()
+    shot.setScale(1.5)
+    shot.start()
+    img = shot.getImage()
+    if img is not None:
+        img.save('__temp.png')
+        print(requestSender.getResult('__temp.png'))
+    input()
